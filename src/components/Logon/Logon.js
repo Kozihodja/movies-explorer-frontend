@@ -6,7 +6,7 @@ import logo from '../../images/logo.svg';
       return (
         <section className='logon'>
             <div className='logon__header'>
-                <img src={logo} alt='Логотип' />
+                <a href='/'><img src={logo} alt='Логотип'/></a>
                 {(props.route === 'signin') ? (
                   <p className='logon__title'>Рады видеть!</p>
                 ) : (

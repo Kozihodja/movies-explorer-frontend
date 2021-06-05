@@ -43,11 +43,9 @@ import img12 from '../../../images/12.png';
     		  </ul>
           <section className='movies__still'>
             { ((movies.length > 3)) ? (
-              <>
-                <div className='movies__button-overlay'></div>
-                <button className='movies__button'></button>
-                <p className='movies__still-text'>Ещё</p>
-              </>
+                <button className='movies__button'>
+                  <p className='movies__still-text'>Ещё</p>
+                </button>
               ) : null }                
           </section>
         </>

@@ -1,3 +1,36 @@
+@media screen and (max-width: 750px) {
+    .logon__header {
+        max-width: 396px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 70px 30px 0 30px;
+    }
+    .logon__form {
+        padding: 20px 30px 0 30px;
+    }
+    .logon__text {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .logon__header {
+        max-width: 396px;
+        text-align: left;
+        margin: 0 auto;
+        padding-top: 70px;
+    }
+    .logon__form {
+        padding: 20px;
+    }
+    .logon__text {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+
 .logon {
     background-color: #fafafa;
     height: 100vh;
@@ -5,10 +38,7 @@
 }
 
 .logon__header {
-    max-width: 396px;
-    text-align: left;
     margin: 0 auto;
-    padding-top: 70px;
 }
 
 .logon__title {
@@ -22,10 +52,10 @@
 
 .logon__form {
     margin: 0 auto;
-    padding-top: 20px;
     max-width: 396px;
     display: flex;
     flex-direction: column;
+    height: 60vh;
 }
 
 .logon__input {
@@ -67,8 +97,6 @@
 .logon__text {
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
     text-align: center;
     color: #A0A0A0;
 }
@@ -80,7 +108,6 @@
 }
 
 .logon__submit-box {
-    width: 396px;
-    position: absolute;
-    bottom: 70px;
+    width: 100%;
+    margin-top: auto;
 }

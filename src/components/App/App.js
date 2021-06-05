@@ -10,20 +10,26 @@ import Profile from '../Profile/Profile';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
+import PopupNav from '../Header/PopupNav/PopupNav';
 
 function App() {
 
   const [user, setUser] = React.useState({ name: 'Виталий', email: 'test@ya.ru' });
 
   const [isEditProfilePopupOpen, toggleEditProfilePopup] = React.useState(false);
+  const [isNavPopupOpen, toggleNavPopup] = React.useState(false);
+
+  function handleNavIconClick() {
+    toggleNavPopup(true);
+  }
 
   function handleEditProfileClick() {
     toggleEditProfilePopup(true);
-    console.log(11)
-}
+  }
 
   function closeAllPopups() {
 		toggleEditProfilePopup(false);
+    toggleNavPopup(false);
 	}
 
   function  handleUpdateUser(data) {
@@ -40,14 +46,15 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Header 
-            loggedIn = 'false'
+            loggedIn = 'true'
           />
           <Main />
           <Footer />
         </Route>
         <Route path="/movies">
           <Header 
-            loggedIn = 'true'  
+            loggedIn = 'true' 
+            onNavIconClick={handleNavIconClick} 
           />
           <Movies />
           <Footer />
@@ -55,6 +62,7 @@ function App() {
         <Route path="/saved-movies">
           <Header 
             loggedIn = 'true'
+            onNavIconClick={handleNavIconClick}
           />
           <SavedMovies />
           <Footer />
@@ -62,6 +70,7 @@ function App() {
         <Route path="/profile">
           <Header 
             loggedIn = 'true'
+            onNavIconClick={handleNavIconClick}
           />
           <Profile 
             user={user}
@@ -78,7 +87,11 @@ function App() {
           <PageNotFound />
         </Route>
       </Switch>
-
+      
+      <PopupNav 
+          isOpen={isNavPopupOpen}
+          onClose={closeAllPopups}
+        />
       <PopupWithForm 
         title ='Редактировать профиль'
         name = 'edit'

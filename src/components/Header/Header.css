@@ -1,10 +1,45 @@
-.header {
-    padding: 0 70px 0 70px;
-    height: 74px;
+@media screen and (max-width: 770px) {
+    .header__hidden-nav {
+        display: none;
+    }
+    .header__hidden {
+        padding: 0 14px 0 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header__nav {
+        padding: 0 14px 0 14px;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .header__hidden {
+        display: none;
+    }
+    .header__hidden-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 70px 0 70px;
+        height: 74px;
+    }
+    .header__nav {
+        padding: 0 70px 0 70px;
+    }
+}
+
+.header__nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 74px;
+}
+.header__hidden {
+    height: 74px;
 }
 
 .header__out {
@@ -55,7 +90,7 @@
 
 .active__navLink {
     font-weight: 500;
-    color: red;
+    color: black;
 }
 
 .header__link-signin {
@@ -96,4 +131,10 @@
     height: 26px;
     padding-right: 3px;
     transition: opacity 0.5s;
+}
+
+.header__hidden-btn {
+    border: none;
+    background: none;
+    padding: 0;
 }
