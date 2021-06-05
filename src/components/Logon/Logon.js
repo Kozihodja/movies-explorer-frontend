@@ -18,12 +18,12 @@ import logo from '../../images/logo.svg';
               {(props.route === 'signin') ? (
                 <div className='logon__submit-box'>
                   <button className='logon__sumbit hover'>Войти</button>
-                  <p className='logon__text'>Ещё не зарегистрированы? <a href='#/' className='logon__link'>Регистрация</a></p>
+                  <p className='logon__text'>Ещё не зарегистрированы? <a href='/signon' className='logon__link'>Регистрация</a></p>
                 </div>
                 ) : (
                 <div className='logon__submit-box'>
                   <button className='logon__sumbit hover'>Зарегистрироваться</button>
-                  <p className='logon__text'>Уже зарегистрированы? <a href='#/' className='logon__link'>Войти</a></p>
+                  <p className='logon__text'>Уже зарегистрированы? <a href='/signin' className='logon__link'>Войти</a></p>
                 </div>
                 )}
             </form>

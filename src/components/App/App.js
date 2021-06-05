@@ -8,14 +8,12 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
-import Logon from '../Logon/Logon';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 
 function App() {
 
-  const user = {
-    name: 'Виталий',
-    email: 'test@ya.ru'
-  }
+  const [user, setUser] = React.useState({ name: 'Виталий', email: 'test@ya.ru' });
 
   const [isEditProfilePopupOpen, toggleEditProfilePopup] = React.useState(false);
 
@@ -28,78 +26,67 @@ function App() {
 		toggleEditProfilePopup(false);
 	}
 
-  function  handleUpdateUser(user) {
-		console.log(user)
+  function  handleUpdateUser(data) {
+		setUser({
+      ...user,
+      name: data.name,
+      email: data.email,
+    });
+    closeAllPopups();
 	}
 
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Header />
+          <Header 
+            loggedIn = 'false'
+          />
           <Main />
           <Footer />
         </Route>
         <Route path="/movies">
-          <Header />
+          <Header 
+            loggedIn = 'true'  
+          />
           <Movies />
           <Footer />
         </Route>
         <Route path="/saved-movies">
-          <Header />
+          <Header 
+            loggedIn = 'true'
+          />
           <SavedMovies />
           <Footer />
         </Route>
         <Route path="/profile">
-          <Header />
+          <Header 
+            loggedIn = 'true'
+          />
           <Profile 
             user={user}
             onEditProfileClick={handleEditProfileClick}
           />
         </Route>
         <Route path="/signin">
-          <Logon
-            route='signin'
-          >
-            <label>
-              <p className='logon__input-placeholder'>Email</p>
-              <input className='logon__input'></input>
-            </label>
-            <label>
-              <p className='logon__input-placeholder'>Пароль</p>
-              <input className='logon__input'></input>
-            </label>
-          </Logon>
+          <Login />
         </Route>
         <Route path="/signon">
-          <Logon
-            route='signon'
-            >
-              <label>
-                <p className='logon__input-placeholder'>Имя</p>
-                <input className='logon__input'></input>
-              </label>
-              <label>
-                <p className='logon__input-placeholder'>Email</p>
-                <input className='logon__input'></input>
-              </label>
-              <label>
-                <p className='logon__input-placeholder'>Пароль</p>
-                <input className='logon__input'></input>
-              </label>
-            </Logon>
+          <Register />
         </Route>
         <Route path="*">
           <PageNotFound />
         </Route>
       </Switch>
 
-      <PopupWithForm title ='Редактировать профиль' name = 'edit' isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} >
-			  <input type="text" value={user.name  || ''} name="userName" id="name-input" className="form__input form__input_name form__input_type_focus" required minLength="2" maxLength="40" />
-			  <span id="name-input-error" className="form__input-error"></span>
-			  <input type="text" value={user.email || ''} name="userJob" id="job-input" className="form__input form__input_job form__input_type_focus" required minLength="2" maxLength="200" />
-			  <span id="job-input-error" className="form__input-error"></span>
-		  </PopupWithForm>
+      <PopupWithForm 
+        title ='Редактировать профиль'
+        name = 'edit'
+        user={user}
+        isOpen={isEditProfilePopupOpen}
+        onClose={closeAllPopups}
+        onUpdateUser={handleUpdateUser}
+        />
     </div>
   );
 }

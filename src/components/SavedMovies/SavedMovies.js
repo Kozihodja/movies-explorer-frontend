@@ -38,10 +38,7 @@ import img12 from '../../images/12.png';
             {movies.filter(movie => movie.isSaved.includes('true')).map(filteredMovie => (
                 <MoviesCard 
                     key={filteredMovie._id} 
-                    name={filteredMovie.name}
-                    image={filteredMovie.image}
-                    isSaved={filteredMovie.isSaved}
-                    duration={filteredMovie.duration}
+                    movie={filteredMovie}
                 />    
             ))}
     	    </ul>

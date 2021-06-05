@@ -21,7 +21,7 @@ import React from "react";
             </ul>
             <ul className='profile__buttons-list'>
                 <li><button className='profile__button hover' onClick={props.onEditProfileClick}>Редактировать</button></li>
-                <li><button className='profile__button profile__button_out hover'>Выйти из аккаунта</button></li>
+                <li><a href='/' className='profile__button profile__button_out hover'>Выйти из аккаунта</a></li>
             </ul>
         </section>
       );
