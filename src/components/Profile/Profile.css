@@ -1,0 +1,77 @@
+.profile {
+    background-color: #FFFFFF;
+    padding: 0px 70px 0px 70px;
+}
+
+.profile__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-top: 12vh;
+}
+
+.profile__data {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 410px;
+    margin: 20vh auto 0;
+}
+
+.profile__data:last-child {
+    padding-bottom: none;
+}
+
+.profile__table-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 17px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.profile__table-row:last-child {
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
+.profile__placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0;
+    padding: 0;
+}
+
+.profile__info {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+.profile__buttons-list {
+    list-style: none;
+    margin: 25vh auto 0;
+    padding: 0;
+    max-width: 410px;
+    text-align: center;
+}
+
+.profile__button {
+    width: 100%;
+    margin: 0 0 16px 0;
+    background: none;
+    border: none;
+}
+
+.profile__button_out {
+    color: #EE3465;
+}

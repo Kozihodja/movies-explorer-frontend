@@ -1,0 +1,52 @@
+.promo {
+    background-color: #DDDEE3;
+    height: 524px;
+    padding-bottom: 48px;
+    padding-right: 70px;
+    padding-left: 70px;
+}
+
+.promo__description {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 75px;
+}
+
+.promo__text {
+    list-style: none;
+    padding: 0;
+}
+
+.promo__title {
+    font-size: 50px;
+    line-height: 116%;
+    font-weight: 400;
+    width: 640px;
+    height: 174px;
+    margin: 0;
+}
+
+.promo__subtitle {
+    font-size: 13px;
+    line-height: 15,73px;
+    font-weight: 400;
+    width: 310px;
+    height: 32px;
+    margin: 49px 0 143px 0;
+    opacity: 0.5;
+}
+
+.promo__img {
+    width: 310px;
+    height: 304px;
+}
+
+.promo__button {
+    margin: 133px 0 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}

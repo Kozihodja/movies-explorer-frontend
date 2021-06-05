@@ -1,0 +1,45 @@
+.techs {
+    background-color: #F5F5F5;
+}
+
+.techs__title {
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    margin: 90px 0 0 0;
+    padding: 0;
+}
+
+.techs__descriptons {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    width: 460px;
+    margin: 26px auto 0 auto;
+}
+
+.techs__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(84px, 90px));
+    grid-gap: 10px;
+    grid-auto-flow: column;
+    justify-content: center;
+    margin: 100px auto 0 auto;
+    padding: 0;
+}
+
+.techs__listItem {
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #E8E8E8;
+    border-radius: 10px;
+}

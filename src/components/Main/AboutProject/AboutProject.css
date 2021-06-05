@@ -1,0 +1,73 @@
+.aboutProject {
+    padding: 110px 70px 100px 70px;
+}
+
+.aboutProject__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26,63px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid black;
+}
+
+.aboutProject__descriptionBox {
+    margin-top: 70px;
+    display: grid;
+    grid-template-rows:  auto auto;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 26px;
+    column-gap: 40px;
+}
+
+.aboutProject__subTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+}
+
+.aboutProject__description {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.aboutProject__time {
+    margin-top: 110px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-rows:  auto auto;
+    grid-template-columns: 1fr 4fr;
+    row-gap: 14px;
+    text-align: center;
+}
+
+.aboutProject__timeItem1 {
+    margin: 0;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    background-color: #3456F3;
+    color: white;
+}
+.aboutProject__timeItem2 {
+    margin: 0;
+}
+.aboutProject__timeItem3 {
+    margin: 0;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    background-color: #F2F2F2;
+}
+
+.aboutProject__timeItem2 {
+    margin: 0;
+    color: #A0A0A0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
