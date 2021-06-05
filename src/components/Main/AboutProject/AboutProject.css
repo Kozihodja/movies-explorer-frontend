@@ -1,0 +1,132 @@
+@media screen and (max-width: 750px){
+    .aboutProject {
+        padding: 70px 18px 70px 18px;
+    }
+    .aboutProject__descriptionBox {
+        margin-top: 60px;
+        display: grid;
+        grid-template-rows:  auto auto auto auto;
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+    }
+    .aboutProject__subTitle_time {
+        grid-row-start: 3;
+    }
+    .aboutProject__description {
+        padding-bottom: 40px;
+    }
+    .aboutProject__time {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        display: grid;
+        grid-template-rows:  auto auto;
+        grid-template-columns: 3fr 4fr;
+        row-gap: 14px;
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 13px;
+        text-align: center;
+    }
+    .aboutProject__title {
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.04em;
+        padding-bottom: 28px;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .aboutProject {
+        padding: 90px 50px 90px 50px;
+    }
+    .aboutProject__descriptionBox {
+        margin-top: 70px;
+        display: grid;
+        grid-template-rows:  auto auto;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 22px;
+        column-gap: 30px;
+    }
+    .aboutProject__description {
+        padding: 0;
+    }
+    .aboutProject__time {
+        margin-top: 93px;
+        margin-bottom: 10px;
+        display: grid;
+        grid-template-rows:  auto auto;
+        grid-template-columns: 1fr 4fr;
+        row-gap: 14px;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-align: center;
+    }
+    .aboutProject__title {
+        font-size: 22px;
+        line-height: 26,63px;
+        padding-bottom: 23px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .aboutProject {
+        padding: 110px 70px 100px 70px;
+    }
+
+    .aboutProject__descriptionBox {
+        row-gap: 26px;
+        column-gap: 40px;
+    }
+
+    .aboutProject__time {
+        margin-top: 110px;
+    }
+}
+
+.aboutProject__title {
+    margin: 0;
+    font-weight: 400;
+    border-bottom: 1px solid black;
+}
+
+.aboutProject__subTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+}
+
+.aboutProject__description {
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.aboutProject__timeItem1 {
+    margin: 0;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    background-color: #3456F3;
+    color: white;
+}
+.aboutProject__timeItem2 {
+    margin: 0;
+}
+.aboutProject__timeItem3 {
+    margin: 0;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    background-color: #F2F2F2;
+}
+
+.aboutProject__timeItem2 {
+    margin: 0;
+    color: #A0A0A0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
