@@ -3,7 +3,7 @@ import React from "react";
   function Footer() {
   
       return (
-        <div className='footer'>
+        <section className='footer'>
             <p className='footer__description'>Учебный проект Яндекс.Практикум х BeatFilm.</p>
             <div className='footer__navBar'>
                 <p className='footer__year'>&#169; 2020</p>
@@ -13,7 +13,7 @@ import React from "react";
                     <li><a href='#/' className='footer__link'>Facebook</a></li>
                 </ul>
             </div>
-        </div>
+        </section>
       );
     }
     

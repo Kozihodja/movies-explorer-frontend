@@ -7,11 +7,9 @@ import logo from '../../images/logo.svg';
         <section className='logon'>
             <div className='logon__header'>
                 <a href='/'><img src={logo} alt='Логотип'/></a>
-                {(props.route === 'signin') ? (
-                  <p className='logon__title'>Рады видеть!</p>
-                ) : (
-                  <p className='logon__title'>Добро пожаловать!</p>
-                )}
+                <p className='logon__title'>
+                  {(props.route === 'signin') ? 'Рады видеть!' : 'Добро пожаловать!'}
+                </p>
             </div>
             <form className='logon__form'>
               {props.children}
