@@ -33,7 +33,7 @@ import img12 from '../../../images/12.png';
   
       return (
         <>
-          <ul className="MovieCardList">
+          <ul className="movie-card-list">
             {movies.map((card, i) => (
               <MoviesCard 
                 key={card._id} 

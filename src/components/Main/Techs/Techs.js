@@ -4,8 +4,8 @@ import React from "react";
   function Techs() {
   
       return (
-        <div className='aboutProject techs'>
-            <h2 className='aboutProject__title'>Технологии</h2>
+        <div className='about-project techs'>
+            <h2 className='about-project__title'>Технологии</h2>
             <p className="techs__title">7 технологий</p>
             <p className='techs__descriptons'>На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
             <ul className='techs__list'>

@@ -7,10 +7,10 @@ import { useHistory } from 'react-router-dom';
 
       return (
         <>
-          <div className='PageNotFound'>
-            <p className='PageNotFound__code'>404</p>
-            <p className='PageNotFound__err'>Страница не найдена</p>
-            <button className="PageNotFound__backBtn" onClick={() => history.goBack()}>Назад</button> 
+          <div className='page-not-found'>
+            <p className='page-not-found__code'>404</p>
+            <p className='page-not-found__err'>Страница не найдена</p>
+            <button className="page-not-found__backBtn hover" onClick={() => history.goBack()}>Назад</button> 
           </div>
         </>
       );

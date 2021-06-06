@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import logo from '../../../images/logo.svg';
-import accLogo from '../../../images/account.svg';
+import logo from '../../images/logo.svg';
+import accLogo from '../../images/account.svg';
   
-  function Nav() {
+  function Navigaton() {
   
       return (
         <section className='header__hidden-nav'>
@@ -20,4 +20,4 @@ import accLogo from '../../../images/account.svg';
       );
     }
     
-    export default Nav;
+    export default Navigaton;

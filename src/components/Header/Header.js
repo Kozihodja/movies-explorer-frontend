@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import Nav from './Nav/Nav'
+import Navigation from '../Navigation/Navigation'
 import logo from '../../images/logo.svg';
 import hiddenHeaderIcon from '../../images/nav.svg'
 
@@ -20,7 +20,7 @@ function navLink() {
   function navLinkUserLogined(props) {
     return (
       <>
-        <Nav />
+        <Navigation />
         <section className='header__hidden'>
         <a href='/'><img src={logo} className="header__logo" alt="логотип"/></a>
           <button className='header__hidden-btn' onClick={props.onNavIconClick}>

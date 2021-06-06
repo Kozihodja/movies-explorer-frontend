@@ -34,7 +34,7 @@ import img12 from '../../images/12.png';
   
       return (
         <>
-            <ul className="MovieCardList">
+            <ul className="movie-card-list">
             {movies.filter(movie => movie.isSaved.includes('true')).map(filteredMovie => (
                 <MoviesCard 
                     key={filteredMovie._id} 

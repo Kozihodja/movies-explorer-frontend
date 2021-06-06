@@ -10,7 +10,7 @@ import Profile from '../Profile/Profile';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
-import PopupNav from '../Header/PopupNav/PopupNav';
+import PopupNavigaton from '../PopupNavigation/PopupNavigation';
 
 function App() {
 
@@ -88,7 +88,7 @@ function App() {
         </Route>
       </Switch>
       
-      <PopupNav 
+      <PopupNavigaton 
           isOpen={isNavPopupOpen}
           onClose={closeAllPopups}
         />

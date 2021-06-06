@@ -1,21 +1,21 @@
 @media screen and (max-width: 750px){
-    .aboutProject {
+    .about-project {
         padding: 70px 18px 70px 18px;
     }
-    .aboutProject__descriptionBox {
+    .about-project__descriptionBox {
         margin-top: 60px;
         display: grid;
         grid-template-rows:  auto auto auto auto;
         grid-template-columns: 1fr;
         row-gap: 16px;
     }
-    .aboutProject__subTitle_time {
+    .about-project__sub-title_time {
         grid-row-start: 3;
     }
-    .aboutProject__description {
+    .about-project__description {
         padding-bottom: 40px;
     }
-    .aboutProject__time {
+    .about-project__time {
         margin-top: 40px;
         margin-bottom: 10px;
         display: grid;
@@ -27,7 +27,7 @@
         line-height: 13px;
         text-align: center;
     }
-    .aboutProject__title {
+    .about-project__title {
         font-size: 18px;
         line-height: 22px;
         letter-spacing: -0.04em;
@@ -36,10 +36,10 @@
 }
 
 @media screen and (min-width: 750px) {
-    .aboutProject {
+    .about-project {
         padding: 90px 50px 90px 50px;
     }
-    .aboutProject__descriptionBox {
+    .about-project__descriptionBox {
         margin-top: 70px;
         display: grid;
         grid-template-rows:  auto auto;
@@ -47,10 +47,10 @@
         row-gap: 22px;
         column-gap: 30px;
     }
-    .aboutProject__description {
+    .about-project__description {
         padding: 0;
     }
-    .aboutProject__time {
+    .about-project__time {
         margin-top: 93px;
         margin-bottom: 10px;
         display: grid;
@@ -62,7 +62,7 @@
         text-align: center;
         text-align: center;
     }
-    .aboutProject__title {
+    .about-project__title {
         font-size: 22px;
         line-height: 26,63px;
         padding-bottom: 23px;
@@ -70,27 +70,27 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .aboutProject {
+    .about-project {
         padding: 110px 70px 100px 70px;
     }
 
-    .aboutProject__descriptionBox {
+    .about-project__descriptionBox {
         row-gap: 26px;
         column-gap: 40px;
     }
 
-    .aboutProject__time {
+    .about-project__time {
         margin-top: 110px;
     }
 }
 
-.aboutProject__title {
+.about-project__title {
     margin: 0;
     font-weight: 400;
     border-bottom: 1px solid black;
 }
 
-.aboutProject__subTitle {
+.about-project__subTitle {
     margin: 0;
     padding: 0;
     font-size: 20px;
@@ -99,31 +99,31 @@
     letter-spacing: -0.04em;
 }
 
-.aboutProject__description {
+.about-project__description {
     margin: 0;
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
 }
 
-.aboutProject__timeItem1 {
+.about-project__timeItem1 {
     margin: 0;
     padding-top: 9px;
     padding-bottom: 9px;
     background-color: #3456F3;
     color: white;
 }
-.aboutProject__timeItem2 {
+.about-project__timeItem2 {
     margin: 0;
 }
-.aboutProject__timeItem3 {
+.about-project__timeItem3 {
     margin: 0;
     padding-top: 9px;
     padding-bottom: 9px;
     background-color: #F2F2F2;
 }
 
-.aboutProject__timeItem2 {
+.about-project__timeItem2 {
     margin: 0;
     color: #A0A0A0;
     font-weight: 500;

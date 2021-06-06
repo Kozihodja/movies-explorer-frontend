@@ -9,7 +9,7 @@
     .portfolio__lists{
         padding: 40px 0 0 0;
     }
-    .portfolio__projectName {
+    .portfolio__project-name {
         font-size: 18px;
         line-height: 28px;
     }
@@ -26,7 +26,7 @@
     .portfolio__lists{
         padding: 50px 0 0 0;
     }
-    .portfolio__projectName {
+    .portfolio__project-name {
         font-size: 28px;
         line-height: 50px;
     }
@@ -36,7 +36,7 @@
     .portfolio {
         padding: 0 70px 125px 70px;
     }
-    .portfolio__projectName {
+    .portfolio__project-name {
         font-size: 30px;
     }
 }
@@ -72,7 +72,7 @@
     border-bottom: none;
 }
 
-.portfolio__projectName {
+.portfolio__project-name {
     font-weight: normal;
     letter-spacing: -0.04em;
     color: black;
