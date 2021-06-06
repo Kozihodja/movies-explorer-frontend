@@ -38,7 +38,8 @@ import img12 from '../../../images/12.png';
               <MoviesCard 
                 key={card._id} 
                 movie={card}
-              />	
+              >
+              </MoviesCard>	
     			  ))}
     		  </ul>
           <section className='movies__still'>

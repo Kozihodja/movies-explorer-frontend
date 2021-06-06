@@ -3,7 +3,6 @@ import SearchForm from './SearchForm/SearchForm';
 import MovieCardList from './MoviesCardList/MoviesCardList'
 import Preloader from "./Prelodaer/Preloader";
 
-  
   function Movies() {
 
     const isLoad = false;
@@ -14,9 +13,11 @@ import Preloader from "./Prelodaer/Preloader";
           <Preloader 
             isLoad = {isLoad}
           />
-          <MovieCardList />
+          <MovieCardList>
+              
+          </MovieCardList>
         </>
       );
     }
     
-    export default Movies;
+export default Movies;
