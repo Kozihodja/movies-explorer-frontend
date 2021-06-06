@@ -15,7 +15,7 @@ import searchSubmit from '../../../images/searchSubmit.svg';
                 </button>
                 <span className='searchForm__vl'></span>
                 <span className='searchForm__checkbox-box'>
-                    <input type="checkbox" name="name" className='searchForm__checkbox'/>
+                    <input type="checkbox" name="name" className='searchForm__checkbox'required/>
                     <p className='searchForm__checkbox-name'>Короткометражки</p>
                 </span>
             </form>
