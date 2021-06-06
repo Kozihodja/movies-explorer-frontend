@@ -1,0 +1,20 @@
+@import url('./__circle/preloader__circle.css');
+
+.preloader {
+    display: none;
+}
+
+.preloader_open {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 700ms ease-out;
+    z-index: 1;
+}

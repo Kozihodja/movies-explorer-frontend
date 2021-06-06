@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Preloader = () => {
+function Preloader(props) {
+
     return (
-        <div className="preloader">
+        <div className={`preloader ${props.isLoad ? `preloader_open` : ''}`}>
           <div className="preloader__circle"> 
           </div>
         </div>
