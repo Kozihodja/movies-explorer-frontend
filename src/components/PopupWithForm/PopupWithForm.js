@@ -31,7 +31,7 @@ function PopupWithForm(props) {
 					<form className={`form form-${props.name}`} name={`profile-${props.name}-form`} method="post" noValidate onSubmit={handleSubmit}>
 						<input type="text" placeholder={props.user.name  || 'Имя'} name="userName" onChange={handleNameChange} id="name-input" className="form__input form__input_name form__input_type_focus" required minLength="2" maxLength="40" />
 			  			<span id="name-input-error" className="form__input-error"></span>
-			  			<input type="text" placeholder={props.user.email || 'Email'} onChange={handleEmailChange}  name="userEmail" id="email-input" className="form__input form__input_email form__input_type_focus" required minLength="2" maxLength="200" />
+			  			<input type="email" placeholder={props.user.email || 'Email'} onChange={handleEmailChange}  name="userEmail" id="email-input" className="form__input form__input_email form__input_type_focus" required minLength="6" maxLength="40" />
 			 			 <span id="job-input-error" className="form__input-error"></span>
 						<button type="submit" className="form__submit" aria-label="Сохранить">Сохранить</button>
 					</form>
