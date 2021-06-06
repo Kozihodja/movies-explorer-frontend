@@ -9,13 +9,14 @@ import searchSubmit from '../../../images/searchSubmit.svg';
             <form className='searchForm'>
                 <img src={magnifier} className='searchForm__img' alt="Лупа" />
                 <input type="text" placeholder="Фильм" name="name" className='searchForm__input'/>
-                <span className='searchForm__btn'>
-                    <button type="submit" className='searchForm__submit'>
-                        <img src={searchSubmit} className='searchForm__submitImg' alt="Стрелка" />
-                    </button>
-                    <span className='searchForm__vl'></span>
+                
+                <button type="submit" className='searchForm__submit'>
+                    <img src={searchSubmit} className='searchForm__submitImg' alt="Стрелка" />
+                </button>
+                <span className='searchForm__vl'></span>
+                <span className='searchForm__checkbox-box'>
                     <input type="checkbox" name="name" className='searchForm__checkbox'/>
-                    <p className='searchForm__checkboxName'>Короткометражки</p>
+                    <p className='searchForm__checkbox-name'>Короткометражки</p>
                 </span>
             </form>
             <hr className='searchForm__gl'></hr>
