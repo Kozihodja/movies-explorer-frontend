@@ -43,7 +43,7 @@ function navLink() {
               (
                 <header className="header header__out">
                   {navLink()}
-                 </header>
+                </header>
               )}
           </>
       );

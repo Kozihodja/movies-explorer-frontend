@@ -16,7 +16,7 @@ import accLogo from '../../images/account.svg';
             <p className='header__account-link'>Аккаунт</p>
             <img src={accLogo} alt='иконка аккаунта' className='header__account-icon'/>
            </NavLink>
-       </section>
+        </section>
       );
     }
     

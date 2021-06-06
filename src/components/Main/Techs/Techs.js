@@ -4,7 +4,7 @@ import React from "react";
   function Techs() {
   
       return (
-        <div className='about-project techs'>
+        <section className='about-project techs'>
             <h2 className='about-project__title'>Технологии</h2>
             <p className="techs__title">7 технологий</p>
             <p className='techs__descriptons'>На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
@@ -17,7 +17,7 @@ import React from "react";
               <li className='techs__listItem'>Express.js</li>
               <li className='techs__listItem'>mongoDB</li>
             </ul>
-        </div>
+        </section>
       );
     }
     

@@ -4,7 +4,7 @@ import link from '../../../images/link.svg';
   function AboutMe() {
   
       return (
-        <div className='portfolio'>
+        <section className='portfolio'>
             <p className='portfolio__title'>Портфолио</p>
             <ul className='portfolio__lists'>
                 <li className='portfolio__item'>
@@ -20,7 +20,7 @@ import link from '../../../images/link.svg';
                     <a href='https://github.com/Kozihodja/react-mesto-auth' target='blank'><img src={link} className='portfolio__link-Img' alt="Стрелка" /></a>
                 </li>
             </ul>
-        </div>
+        </section>
       );
     }
     

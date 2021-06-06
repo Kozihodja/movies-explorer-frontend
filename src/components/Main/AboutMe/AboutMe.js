@@ -4,7 +4,7 @@ import profilePhoto from '../../../images/profilePhoto.png';
   function AboutMe() {
   
       return (
-        <div className='about-project about-me'>
+        <section className='about-project about-me'>
             <h2 className='about-project__title'>Cтудент</h2>
             <div className='about-me__info-box'>
                 <div className='about-me__brief'>
@@ -21,7 +21,7 @@ import profilePhoto from '../../../images/profilePhoto.png';
                 </div>
                 <img src={profilePhoto} alt='Фотография Виталия' className='about-me__img' />
             </div>
-        </div>
+        </section>
       );
     }
     
