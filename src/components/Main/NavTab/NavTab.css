@@ -1,0 +1,8 @@
+.navtab {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}

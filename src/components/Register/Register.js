@@ -1,7 +1,7 @@
 import React from "react";
 import Logon from '../Logon/Logon'
   
-  function Register(props) {
+  function Register() {
 
       return (
         <Logon 

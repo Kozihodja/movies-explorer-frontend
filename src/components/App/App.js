@@ -46,7 +46,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Header 
-            loggedIn = 'true'
+            loggedIn = 'false'
           />
           <Main />
           <Footer />

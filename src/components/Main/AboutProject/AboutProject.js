@@ -4,7 +4,7 @@ import React from "react";
   function AboutProject() {
   
       return (
-        <div className='aboutProject'>
+        <section className='aboutProject' id='aboutProject'>
             <h2 className='aboutProject__title'>О проекте</h2>
             <div className='aboutProject__descriptionBox'>
                 <p className='aboutProject__subTitle'>Дипломный проект включал 5 этапов</p>
@@ -18,7 +18,7 @@ import React from "react";
                 <p className='aboutProject__timeItem2'>Back-end</p>
                 <p className='aboutProject__timeItem2'>Front-ent</p>
             </div>
-        </div>
+        </section>
       );
     }
     
