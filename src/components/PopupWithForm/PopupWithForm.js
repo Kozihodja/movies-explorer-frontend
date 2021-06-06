@@ -29,9 +29,9 @@ function PopupWithForm(props) {
 					<button type="button" className="popup__close button-hover" aria-label="Закрыть" onClick={props.onClose}></button>
                     <h3 className="popup__form-title">{props.title}</h3>
 					<form className={`form form-${props.name}`} name={`profile-${props.name}-form`} method="post" noValidate onSubmit={handleSubmit}>
-						<input type="text" defaultValue={props.user.name  || ''} name="userName" onChange={handleNameChange} id="name-input" className="form__input form__input_name form__input_type_focus" required minLength="2" maxLength="40" />
+						<input type="text" placeholder={props.user.name  || 'Имя'} name="userName" onChange={handleNameChange} id="name-input" className="form__input form__input_name form__input_type_focus" required minLength="2" maxLength="40" />
 			  			<span id="name-input-error" className="form__input-error"></span>
-			  			<input type="text" defaultValue={props.user.email || ''} onChange={handleEmailChange}  name="userJob" id="job-input" className="form__input form__input_job form__input_type_focus" required minLength="2" maxLength="200" />
+			  			<input type="text" placeholder={props.user.email || 'Email'} onChange={handleEmailChange}  name="userEmail" id="email-input" className="form__input form__input_email form__input_type_focus" required minLength="2" maxLength="200" />
 			 			 <span id="job-input-error" className="form__input-error"></span>
 						<button type="submit" className="form__submit" aria-label="Сохранить">Сохранить</button>
 					</form>

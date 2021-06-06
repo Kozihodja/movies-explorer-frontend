@@ -3,7 +3,7 @@
         width: 100%;
     }
     .popup__account-link {
-        padding-bottom: 46px;
+        margin-bottom: 46px;
     }
 }
 
@@ -12,7 +12,7 @@
         width: 75%;
     }
     .popup__account-link {
-        padding-bottom: 90px;
+        margin-bottom: 90px;
     }
 }
 
@@ -81,3 +81,8 @@
     font-weight: 500;
 }
 
+.header__account-link {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 12px;
+}
