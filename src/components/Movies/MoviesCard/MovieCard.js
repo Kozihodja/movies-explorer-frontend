@@ -11,11 +11,11 @@ import DelIcon from './DelIcon/DelIcon'
     const cardLikeButtonClassName = (`movie__like-icon ${props.movie.isSaved ? 'movie__like-icon_liked' : ''}`);
   
       return (
-        <li className='movieCard'>
-          <img src={props.movie.image} alt={props.movie.name} className='movieCard__img'/>
-          <span className='movieCard__info'>
-            <p className='movieCard__name'>{props.movie.name}</p>
-            <button type="button" className="movieCard__like-button hover" aria-label="Поставить лайк">
+        <li className='movie-card'>
+          <img src={props.movie.image} alt={props.movie.name} className='movie-card__img'/>
+          <span className='movie-card__info'>
+            <p className='movie-card__name'>{props.movie.name}</p>
+            <button type="button" className="movie-card__like-button hover" aria-label="Поставить лайк">
 					    {current_page === '/movies' ? 
                 <SaveIcon 
                   movie = {props.movie}
@@ -23,7 +23,7 @@ import DelIcon from './DelIcon/DelIcon'
                 /> : <DelIcon/>}
 			      </button>
           </span>
-          <p className='movieCard__duration'>{props.movie.duration}</p>
+          <p className='movie-card__duration'>{props.movie.duration}</p>
         </li>
       );
     }
