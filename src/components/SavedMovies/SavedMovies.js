@@ -1,5 +1,7 @@
 import React from "react";
 import MoviesCard from '../Movies/MoviesCard/MovieCard';
+import SearchForm from '../Movies/SearchForm/SearchForm'
+import Preloader from '../Movies/Prelodaer/Preloader'
 import img1 from '../../images/1.png';
 import img2 from '../../images/2.png';
 import img3 from '../../images/3.png';
@@ -31,9 +33,14 @@ import img12 from '../../images/12.png';
       {_id: 12, name: 'По волнам: Искусство звука в кино', image: img12, isSaved: 'false', duration: '1ч 7м',},
     ]
     
+    const isSavedMoviesLoad = false;
   
       return (
         <>
+          <SearchForm />
+          <Preloader 
+            isLoad = {isSavedMoviesLoad}
+          />
             <ul className="movie-card-list">
             {movies.filter(movie => movie.isSaved.includes('true')).map(filteredMovie => (
                 <MoviesCard 

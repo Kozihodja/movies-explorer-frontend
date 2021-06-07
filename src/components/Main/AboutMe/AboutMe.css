@@ -1,4 +1,4 @@
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 550px) {
     .about-me__info-box {
         margin-top: 60px;
         display: flex;
@@ -48,12 +48,13 @@
     
 }
 
-@media screen and (min-width: 512px) {
+@media screen and (min-width: 550px) {
     .about-me__info-box {
         margin-top: 66px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 50px;
     }
     .about-me__job {
         font-weight: 500;

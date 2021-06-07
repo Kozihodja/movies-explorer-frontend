@@ -8,9 +8,9 @@ import searchSubmit from '../../../images/searchSubmit.svg';
         <div className='search-box'>
             <form className='search-form'>
                 <img src={magnifier} className='search-form__img' alt="Лупа" />
-                <input type="text" placeholder="Фильм" name="name" className='search-form__input'/>
+                <input type="text" required placeholder="Фильм" name="name" className='search-form__input'/>
                 
-                <button type="submit" className='search-form__submit'>
+                <button type="submit" className='search-form__submit hover'>
                     <img src={searchSubmit} className='search-form__submitImg' alt="Стрелка" />
                 </button>
                 <span className='search-form__vl'></span>
