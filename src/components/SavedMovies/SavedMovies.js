@@ -7,8 +7,7 @@ import Footer from "../Footer/Footer"
 
   function SavedMovies(props) {
 
-    const movies  = props.savedMovies
-    console.log(props.savedMovies)
+    const movies  = props.savedMovies;
 
     const isSavedMoviesLoad = false;
   

@@ -16,10 +16,10 @@ import DelIcon from './DelIcon/DelIcon'
     console.log(props.movie)
 
     if (current_page === '/movies') {
-      url = props.baseUrl + props.movie.image.url;
-      trailerLink = props.movie.trailerLink
       // Проверка содержит ли массив сохраненых фильмов текущий фильм(по ID)
       if (JSON.parse(localStorage.getItem('savedMovies')) !==null) {
+      url = props.baseUrl + props.movie.image.url;
+      trailerLink = props.movie.trailerLink
         const result = JSON.parse(localStorage.getItem('savedMovies')).find(function(object) {
           return object.movieId === props.movie.id;
         });
