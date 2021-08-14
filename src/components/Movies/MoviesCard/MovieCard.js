@@ -10,17 +10,23 @@ import DelIcon from './DelIcon/DelIcon'
     const current_page = location.pathname;
     // Переменная для управления состояния кнопки сохранить в роуте /movies
     let isSaved;
-
     let url;
+    let trailerLink;
+
+    console.log(props.movie)
 
     if (current_page === '/movies') {
       url = props.baseUrl + props.movie.image.url;
+      trailerLink = props.movie.trailerLink
       // Проверка содержит ли массив сохраненых фильмов текущий фильм(по ID)
-      const result = JSON.parse(localStorage.getItem('savedMovies')).find(function(object) {
-        return object.movieId === props.movie.id;
-      });
-      result ? isSaved = true: isSaved = false;
+      if (JSON.parse(localStorage.getItem('savedMovies')) !==null) {
+        const result = JSON.parse(localStorage.getItem('savedMovies')).find(function(object) {
+          return object.movieId === props.movie.id;
+        });
+        result ? isSaved = true: isSaved = false;
+      }
     } else if (current_page === '/saved-movies') {
+      trailerLink = props.movie.trailer
       url = props.movie.thumbnail;
     }
 
@@ -36,13 +42,13 @@ import DelIcon from './DelIcon/DelIcon'
         }
       } 
       else if (current_page === '/saved-movies') {
-
-        // props.onDelIconClick(props.movie.id);
+        console.log(props.movie._id)
+        props.onDelIconClick(props.movie._id);
       }
     }
       return (
         <li className='movie-card'>
-          <img src={url} alt={props.movie.name} className='movie-card__img'/>
+          <a href={trailerLink} target="_blank" rel='noreferrer'><img src={url} alt={props.movie.name} className='movie-card__img'/></a>
           <span className='movie-card__info'>
             <p className='movie-card__name'>{props.movie.nameRU}</p>
             <button 

@@ -23,7 +23,7 @@ import Footer from "../Footer/Footer"
             isLoad = {props.isLoad}
           />
           <MovieCardList 
-            movies = {props.loadMovies}
+            movies = {props.movies}
             isSearchErr = {props.isSearchErr}
             onSubmitMoreBtn = {props.onSubmitMoreBtn}
             count={{ countMovies, setCountMovies }}

@@ -7,7 +7,8 @@ import Footer from "../Footer/Footer"
 
   function SavedMovies(props) {
 
-    const movies  = JSON.parse(localStorage.getItem('savedMovies'));;
+    const movies  = props.savedMovies
+    console.log(props.savedMovies)
 
     const isSavedMoviesLoad = false;
   

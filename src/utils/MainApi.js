@@ -118,22 +118,30 @@ export class Api {
         })
     }
 
-    deleteSavedMovie(movieId) {
+    deleteSavedMovie(movieId){
         return fetch(`${this._baseUrl}/movies/${movieId}`, {
             method: 'DELETE',
             headers: {
-                ...this._headers,
+                "Content-Type": "application/json",
                 'authorization':`Bearer ${localStorage.getItem('jwt')}`,
             },
-        });
+        }).then(res => {
+            if (res.ok) {
+                return res.json();
+              }
+            return Promise.reject(res.status);
+        })
     }
+
+    
+    
 }
 
 const api = new Api({
     baseUrl: 'https://api.dipback.nomoredomains.monster',
      headers: {
             "Content-Type": "application/json",
-            "Authorization" : `Bearer ${localStorage.getItem('token')}`
+            "Authorization" : `Bearer ${localStorage.getItem('jwt')}`
         }
   });
 

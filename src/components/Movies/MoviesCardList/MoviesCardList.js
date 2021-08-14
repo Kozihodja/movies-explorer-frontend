@@ -8,10 +8,10 @@ import MoviesCard from '../MoviesCard/MovieCard';
 
     let allSearchmovies;
     
-    if (JSON.parse(localStorage.getItem('movies'))===null) {
+    if (props.movies===null) {
       allSearchmovies = [];
     } else {
-      allSearchmovies = JSON.parse(localStorage.getItem('movies'));
+      allSearchmovies = props.movies;
     }
 
     const [addMoreCards, setAddMoreCards] = useState(0);

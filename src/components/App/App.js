@@ -19,7 +19,8 @@ function App() {
   const history = useHistory();
   const [isLoad, setIsLoad] = React.useState(false);
   const [isSearchErr, setIsSearchErr] = React.useState(false);
-  const [movies, setMovies] = React.useState([]);
+  const [movies, setMovies] = React.useState(['']);
+  const [savedMovies, setSavedMovies] = React.useState([]);
   const [isSearchShortMovies, setIsSearchShortMovies] = React.useState(false);
   const [isReqErr, setIsReqErr] = React.useState(false);
   const [errMessage, setErrMassage] = React.useState('Что то пошло не так...');
@@ -53,21 +54,26 @@ function App() {
                 history.push('/');
                 console.log(err);
             });
+      setMovies(JSON.parse(localStorage.getItem('movies')));
+      setSavedMovies(JSON.parse(localStorage.getItem('savedMovies')));
     }
-}, [currentUser, history]);
+}, []);
 
 useEffect(() => {
   if (loggedIn && (localStorage.getItem('savedMovies') === null)) {
     apiMain.getMovies()
           .then((res) => {
+            setSavedMovies(res.movie)
             localStorage.setItem('savedMovies', JSON.stringify(res.movie));
-            console.log(res)
+          })
+          .then(() => {
+            console.log(savedMovies)
           })
           .catch((err) => {
             console.log(err);
           });
   }
-}, [loggedIn]);
+}, [loggedIn, savedMovies]);
   
   function handleSearch() {
     if (localStorage.getItem('allMovies') === null) {
@@ -76,14 +82,15 @@ useEffect(() => {
         api.getInitialCards()
       ])
       .then((response) => {
-        setMovies(response[0]);
         localStorage.setItem('allMovies', JSON.stringify(response[0]))
         let filterReq =  JSON.parse(localStorage.getItem('allMovies')).filter(function(movie) {
           return ((movie.nameRU.toLowerCase().includes(localStorage.getItem('userReq').toLowerCase())) && (isSearchShortMovies ? movie.duration < 40 : ' '));
           });
         localStorage.setItem('movies', JSON.stringify(filterReq));
+        setMovies(filterReq);
       })
       .finally(() => {
+        console.log(movies)
         setIsLoad(false);
       })
       .catch((err) => {
@@ -94,7 +101,7 @@ useEffect(() => {
         return ((movie.nameRU.toLowerCase().includes(localStorage.getItem('userReq').toLowerCase())) && (isSearchShortMovies ? movie.duration < 40 : ' '));
         });
       localStorage.setItem('movies', JSON.stringify(filterReq));
-      setMovies(JSON.stringify(filterReq))
+      setMovies(filterReq)
     }
 	}
 
@@ -203,7 +210,9 @@ useEffect(() => {
     .then((res) => {
       apiMain.getMovies()
           .then((res) => {
+            setSavedMovies(res.movie)
             localStorage.setItem('savedMovies', JSON.stringify(res.movie));
+            setMovies(JSON.parse(localStorage.getItem('movies')))
           })
           .catch((err) => {
             console.log(err);
@@ -224,20 +233,21 @@ useEffect(() => {
     });
   }
 
-  function handleDeleteMovie(movieID) {
+  function handleDeleteMovie(movieId) {
+    console.log(movieId)
     setIsLoad(true);
     Promise.all([
-      apiMain.deleteSavedMovie(movieID)
+      apiMain.deleteSavedMovie(movieId)
     ])
-    .then((res) => {
-      console.log(res);
-      // apiMain.getMovies()
-      //     .then((res) => {
-      //       localStorage.setItem('savedMovies', JSON.stringify(res.movie));
-      //     })
-      //     .catch((err) => {
-      //       console.log(err);
-      //     });
+    .then((res) => {;
+      apiMain.getMovies()
+          .then((res) => {
+            setSavedMovies(res.movie)
+            localStorage.setItem('savedMovies', JSON.stringify(res.movie));
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     })
     .finally(() => {
       setIsLoad(false);
@@ -273,6 +283,7 @@ useEffect(() => {
            onShortMoviesClick = {toggleIsShortMovies}
            onSaveIconClick={handleSaveMovie}
            onDelIconClick={handleDeleteMovie}
+           movies = {movies}
         />
         <ProtectedRoute 
            exact path="/saved-movies"
@@ -280,6 +291,8 @@ useEffect(() => {
            component={SavedMovies}
            onNavIconClick={handleNavIconClick}
            onDelIconClick={handleDeleteMovie}
+           savedMovies={savedMovies}
+           
         />
         <ProtectedRoute 
            exact path="/profile"
