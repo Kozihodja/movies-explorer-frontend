@@ -66,9 +66,6 @@ useEffect(() => {
             setSavedMovies(res.movie)
             localStorage.setItem('savedMovies', JSON.stringify(res.movie));
           })
-          .then(() => {
-            console.log(savedMovies)
-          })
           .catch((err) => {
             console.log(err);
           });
@@ -90,7 +87,6 @@ useEffect(() => {
         setMovies(filterReq);
       })
       .finally(() => {
-        console.log(movies)
         setIsLoad(false);
       })
       .catch((err) => {
@@ -125,7 +121,6 @@ useEffect(() => {
       apiMain.udateUserData(data.name, data.email)
     ])
     .then((res) => {
-      console.log(res[0].user);
       setCurrentUser({
         ...currentUser,
         name: res[0].user.name,
@@ -234,7 +229,6 @@ useEffect(() => {
   }
 
   function handleDeleteMovie(movieId) {
-    console.log(movieId)
     setIsLoad(true);
     Promise.all([
       apiMain.deleteSavedMovie(movieId)

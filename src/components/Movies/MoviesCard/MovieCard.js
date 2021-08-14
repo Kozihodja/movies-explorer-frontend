@@ -13,8 +13,6 @@ import DelIcon from './DelIcon/DelIcon'
     let url;
     let trailerLink;
 
-    console.log(props.movie)
-
     if (current_page === '/movies') {
       // Проверка содержит ли массив сохраненых фильмов текущий фильм(по ID)
       if (JSON.parse(localStorage.getItem('savedMovies')) !==null) {
@@ -35,14 +33,12 @@ import DelIcon from './DelIcon/DelIcon'
     function onSaveIconClick() {
       if (current_page === '/movies') {
         if (isSaved) {
-          console.log(props.movie)
           props.onDelIconClick(props.movie.id);
         } else {
           props.onSaveIconClick(props.movie);
         }
       } 
       else if (current_page === '/saved-movies') {
-        console.log(props.movie._id)
         props.onDelIconClick(props.movie._id);
       }
     }
