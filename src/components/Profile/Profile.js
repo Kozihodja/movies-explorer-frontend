@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Header/Header"
   
   function Profile(props) {
 
@@ -6,7 +7,16 @@ import React from "react";
         user
     } = props;
   
+    function onExit(e) {
+      e.preventDefault();
+      props.onExitClick();
+    }
       return (
+      <>
+        <Header 
+            loggedIn = {props.loggedIn}
+            onNavIconClick={props.onNavIconClick}
+          />
         <section className='profile'>
             <p className='profile__title'>Привет, {user.name}!</p>
             <ul className='profile__data'>
@@ -21,9 +31,10 @@ import React from "react";
             </ul>
             <ul className='profile__buttons-list'>
                 <li><button className='profile__button hover' onClick={props.onEditProfileClick}>Редактировать</button></li>
-                <li><a href='/' className='profile__button profile__button_out hover'>Выйти из аккаунта</a></li>
+                <li><a href='/' onClick={onExit} className='profile__button profile__button_out hover'>Выйти из аккаунта</a></li>
             </ul>
         </section>
+      </>
       );
     }
     

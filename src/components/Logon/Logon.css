@@ -100,6 +100,10 @@
     transition: opacity 0.3s;
 }
 
+.logon__sumbit_disabled {
+    background: #A0A0A0;
+}
+
 .logon__text {
     font-style: normal;
     font-weight: normal;
@@ -116,4 +120,12 @@
 .logon__submit-box {
     width: 100%;
     margin-top: auto;
+}
+
+.error__mes {
+    color: red;
+    text-align: center;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
 }

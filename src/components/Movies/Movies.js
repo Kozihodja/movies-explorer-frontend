@@ -2,20 +2,35 @@ import React from "react";
 import SearchForm from './SearchForm/SearchForm';
 import MovieCardList from './MoviesCardList/MoviesCardList'
 import Preloader from "./Prelodaer/Preloader";
+import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
 
-  function Movies() {
+  function Movies(props) {
 
-    const isLoad = false;
+    const [countMovies, setCountMovies] = React.useState(0);
 
       return (
         <>
-          <SearchForm />
-          <Preloader 
-            isLoad = {isLoad}
+          <Header 
+            loggedIn = {props.loggedIn}
+            onNavIconClick={props.onNavIconClick}
           />
-          <MovieCardList>
-              
-          </MovieCardList>
+          <SearchForm 
+            onSearch = {props.onSearch}
+            onShortMoviesClick = {props.onShortMoviesClick}
+          />
+          <Preloader 
+            isLoad = {props.isLoad}
+          />
+          <MovieCardList 
+            movies = {props.loadMovies}
+            isSearchErr = {props.isSearchErr}
+            onSubmitMoreBtn = {props.onSubmitMoreBtn}
+            count={{ countMovies, setCountMovies }}
+            onSaveIconClick = {props.onSaveIconClick}
+            onDelIconClick={props.onDelIconClick}
+          />
+          <Footer />
         </>
       );
     }
