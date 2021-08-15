@@ -9,9 +9,10 @@ import DelIcon from './DelIcon/DelIcon'
     const location = useLocation();
     const current_page = location.pathname;
     // Переменная для управления состояния кнопки сохранить в роуте /movies
-    let isSaved;
+    let isSaved = false;
     let url;
     let trailerLink;
+    let delMovieId = '';
 
     if (current_page === '/movies') {
       // Проверка содержит ли массив сохраненых фильмов текущий фильм(по ID)
@@ -21,7 +22,10 @@ import DelIcon from './DelIcon/DelIcon'
         const result = JSON.parse(localStorage.getItem('savedMovies')).find(function(object) {
           return object.movieId === props.movie.id;
         });
-        result ? isSaved = true: isSaved = false;
+        if (result) {
+          isSaved = true; 
+          delMovieId = result._id
+        }
       }
     } else if (current_page === '/saved-movies') {
       trailerLink = props.movie.trailer
@@ -33,7 +37,7 @@ import DelIcon from './DelIcon/DelIcon'
     function onSaveIconClick() {
       if (current_page === '/movies') {
         if (isSaved) {
-          props.onDelIconClick(props.movie.id);
+          props.onDelIconClick(delMovieId);
         } else {
           props.onSaveIconClick(props.movie);
         }

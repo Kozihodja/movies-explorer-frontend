@@ -238,6 +238,7 @@ useEffect(() => {
           .then((res) => {
             setSavedMovies(res.movie)
             localStorage.setItem('savedMovies', JSON.stringify(res.movie));
+            setMovies(JSON.parse(localStorage.getItem('movies')));
           })
           .catch((err) => {
             console.log(err);
