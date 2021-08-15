@@ -6,13 +6,7 @@ import MoviesCard from '../MoviesCard/MovieCard';
 
     const count = props.count;
 
-    let allSearchmovies;
-    
-    if (props.movies===null) {
-      allSearchmovies = [];
-    } else {
-      allSearchmovies = props.movies;
-    }
+    let allSearchmovies = props.movies;
 
     const [addMoreCards, setAddMoreCards] = useState(0);
 
@@ -48,8 +42,9 @@ import MoviesCard from '../MoviesCard/MovieCard';
               ) : 
               (
                 <>
-                  <ul className="movie-card-list">
-                    {allSearchmovies.slice(0, count.countMovies).map((movie, i) => (
+                    {allSearchmovies.length ? (
+                    <ul className="movie-card-list">
+                      {allSearchmovies.slice(0, count.countMovies).map((movie, i) => (
                       <MoviesCard 
                         key={i} 
                         movie={movie}
@@ -59,7 +54,13 @@ import MoviesCard from '../MoviesCard/MovieCard';
                       >
                       </MoviesCard>	
     			          ))}
-    		          </ul>
+                    </ul>
+                    ) : (
+                      <p className="movie-card-list">
+                        Ни чего не найдено
+                      </p>
+                    )}
+    		          
                   <section className='movies__still'>
                     {((count.countMovies < allSearchmovies.length)) ? (
                       <button onClick={addMoreMovies} className='movies__button'>

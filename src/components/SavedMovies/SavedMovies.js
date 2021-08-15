@@ -17,7 +17,9 @@ import Footer from "../Footer/Footer"
             loggedIn = {props.loggedIn}
             onNavIconClick={props.onNavIconClick}
           />
-          <SearchForm />
+          <SearchForm 
+            onSearch={props.onSearch}
+          />
           <Preloader 
             isLoad = {isSavedMoviesLoad}
           />

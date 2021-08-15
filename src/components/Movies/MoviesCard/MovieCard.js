@@ -8,11 +8,19 @@ import DelIcon from './DelIcon/DelIcon'
     // В зависимости от роута отрисовываются карточки и применяются те или иные функции
     const location = useLocation();
     const current_page = location.pathname;
+    let movieDuration = '';
     // Переменная для управления состояния кнопки сохранить в роуте /movies
     let isSaved = false;
     let url;
     let trailerLink;
     let delMovieId = '';
+
+
+    if (props.movie.duration > 59) {
+      movieDuration = `${Math.floor(props.movie.duration/60)}ч ${props.movie.duration % 60}м`;
+    } else if (props.movie.duration <= 59) {
+      movieDuration = `${props.movie.duration} м`;
+    }
 
     if (current_page === '/movies') {
       // Проверка содержит ли массив сохраненых фильмов текущий фильм(по ID)
@@ -64,7 +72,7 @@ import DelIcon from './DelIcon/DelIcon'
                 /> : <DelIcon/>}
 			      </button>
           </span>
-          <p className='movie-card__duration'>{props.movie.duration}</p>
+          <p className='movie-card__duration'>{movieDuration}</p>
         </li>
       );
     }

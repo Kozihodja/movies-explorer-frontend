@@ -19,7 +19,7 @@ function App() {
   const history = useHistory();
   const [isLoad, setIsLoad] = React.useState(false);
   const [isSearchErr, setIsSearchErr] = React.useState(false);
-  const [movies, setMovies] = React.useState(['']);
+  const [movies, setMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [isSearchShortMovies, setIsSearchShortMovies] = React.useState(false);
   const [isReqErr, setIsReqErr] = React.useState(false);
@@ -54,7 +54,11 @@ function App() {
                 history.push('/');
                 console.log(err);
             });
+    }
+    if (JSON.parse(localStorage.getItem('movies'))) {
       setMovies(JSON.parse(localStorage.getItem('movies')));
+    }
+    if (JSON.parse(localStorage.getItem('savedMovies'))) {
       setSavedMovies(JSON.parse(localStorage.getItem('savedMovies')));
     }
 }, []);
@@ -80,7 +84,7 @@ useEffect(() => {
       ])
       .then((response) => {
         localStorage.setItem('allMovies', JSON.stringify(response[0]))
-        let filterReq =  JSON.parse(localStorage.getItem('allMovies')).filter(function(movie) {
+        const filterReq =  JSON.parse(localStorage.getItem('allMovies')).filter(function(movie) {
           return ((movie.nameRU.toLowerCase().includes(localStorage.getItem('userReq').toLowerCase())) && (isSearchShortMovies ? movie.duration < 40 : ' '));
           });
         localStorage.setItem('movies', JSON.stringify(filterReq));
@@ -93,13 +97,22 @@ useEffect(() => {
         setIsSearchErr(true);
       });
     } else {
-      let filterReq =  JSON.parse(localStorage.getItem('allMovies')).filter(function(movie) {
+      const filterReq =  JSON.parse(localStorage.getItem('allMovies')).filter(function(movie) {
         return ((movie.nameRU.toLowerCase().includes(localStorage.getItem('userReq').toLowerCase())) && (isSearchShortMovies ? movie.duration < 40 : ' '));
         });
       localStorage.setItem('movies', JSON.stringify(filterReq));
       setMovies(filterReq)
     }
 	}
+
+  function handleSearchSavedMovies() {
+    if (localStorage.getItem('savedMovies') !==null) {
+      const filterReq =  JSON.parse(localStorage.getItem('savedMovies')).filter(function(movie) {
+        return ((movie.nameRU.toLowerCase().includes(localStorage.getItem('userSearchReqSavedMovies').toLowerCase())) && (isSearchShortMovies ? movie.duration < 40 : ' '));
+        });
+      setSavedMovies(filterReq)
+    }
+  }
 
   function handleNavIconClick() {
     toggleNavPopup(true);
@@ -142,30 +155,6 @@ useEffect(() => {
     closeAllPopups();
 	}
 
-  function hendleSignOn(name, email, password) {
-    setIsLoad(true);
-    Promise.all([
-      apiMain.register(name, email, password)
-    ])
-    .then(() => {
-      history.push('/signin');
-    })
-    .finally(() => {
-      setIsLoad(false);
-      // Сбрасываю значения стейтов при успешном запросе
-      setIsReqErr(false);
-      setErrMassage('Что то пошло не так...')
-    })
-    .catch((err) => {
-      if (err===400) {
-        setErrMassage('Проверьте введенные данные')
-      } else if (err===409) {
-        setErrMassage('Пользователь существует')
-      }
-      setIsReqErr(true);
-    });
-  }
-
   function hendleLogin(email, password) {
     setIsLoad(true);
     Promise.all([
@@ -188,6 +177,33 @@ useEffect(() => {
       if (err===401) {
         setErrMassage('Не верный логин или пароль')
       }
+    });
+  }
+
+  function hendleSignOn(name, email, password) {
+    setIsLoad(true);
+    Promise.all([
+      apiMain.register(name, email, password)
+    ])
+    .then((res) => {
+      // console.log(res)
+      // console.log(password)
+      // history.push('/signin');
+      hendleLogin(email, password);
+    })
+    .finally(() => {
+      setIsLoad(false);
+      // Сбрасываю значения стейтов при успешном запросе
+      setIsReqErr(false);
+      setErrMassage('Что то пошло не так...')
+    })
+    .catch((err) => {
+      if (err===400) {
+        setErrMassage('Проверьте введенные данные')
+      } else if (err===409) {
+        setErrMassage('Пользователь существует')
+      }
+      setIsReqErr(true);
     });
   }
 
@@ -287,7 +303,7 @@ useEffect(() => {
            onNavIconClick={handleNavIconClick}
            onDelIconClick={handleDeleteMovie}
            savedMovies={savedMovies}
-           
+           onSearch={handleSearchSavedMovies}
         />
         <ProtectedRoute 
            exact path="/profile"

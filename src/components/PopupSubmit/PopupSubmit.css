@@ -1,0 +1,10 @@
+.submitPopup_is-opened {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+  }
+
+.submitPopup__btn_cancel {
+  margin-top: 20px;
+  background-color: gray;
+}

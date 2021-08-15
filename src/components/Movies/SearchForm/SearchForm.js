@@ -16,16 +16,24 @@ import searchSubmit from '../../../images/searchSubmit.svg';
         props.onSearch();
       } else if (location.pathname === '/saved-movies') {
         localStorage.setItem('userSearchReqSavedMovies', (searchReq.current.value))
+        props.onSearch();
       }
     }
 
-    let searchReq = useRef();
+    const searchReq = useRef();
   
       return (
-        <div className='search-box' onSubmit={search}>
-            <form className='search-form'>
+        <div className='search-box'>
+            <form className='search-form' onSubmit={search}>
                 <img src={magnifier} className='search-form__img' alt="Лупа" />
-                <input ref={searchReq} type="text" required placeholder="Фильм" name="name" className='search-form__input'/>
+                <input 
+                  ref={searchReq} 
+                  type="text" 
+                  required 
+                  placeholder={(location.pathname === '/movies') ? (`Ранее икали: ${localStorage.getItem('userReq')}`): (`Ранее икали: ${localStorage.getItem('userSearchReqSavedMovies')}`)}  
+                  name="name" 
+                  className='search-form__input'
+                />
                 
                 <button type="submit" className='search-form__submit hover'>
                     <img src={searchSubmit} className='search-form__submitImg' alt="Стрелка" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import useInput from '../../utils/Validate';
 import Preloader from '../Movies/Prelodaer/Preloader';
-
+import PopupSubmit from '../PopupSubmit/PopupSubmit'
 function PopupWithForm(props) {  
 
   const emailVal = useInput('', {isEmpty : true, minLength: 6, maxLength: 40, isEmail: true})
@@ -9,6 +9,7 @@ function PopupWithForm(props) {
     
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
+    const [popupSubmitIsOpen, setpopupSubmitIsOpen] =  React.useState(false);
 
     function handleNameChange(e) {
         setName(e.target.value);
@@ -23,18 +24,32 @@ function PopupWithForm(props) {
     function handleSubmit(e) {
         // Запрещаем браузеру переходить по адресу формы
         e.preventDefault();
-      
-        // Передаём значения управляемых компонентов во внешний обработчик
-        props.onUpdateUser({
+        setpopupSubmitIsOpen(true);
+      }
+    function closePopupSubmt() {
+      setpopupSubmitIsOpen(false)
+    }
+
+    function submitPopupSubmt() {
+      setpopupSubmitIsOpen(false)
+
+      props.onUpdateUser({
           name,
           email,
         });
-      } 
+    }
 
 		return (
       <>
       <Preloader 
         isLoad = {props.isLoad}
+      />
+      <PopupSubmit
+        title = "Сохранить внесенные изменения?"
+        name = "submitUpdateUserData"
+        isOpen = {popupSubmitIsOpen}
+        onClose = {closePopupSubmt}
+        onSubmit = {submitPopupSubmt}
       />
       <section className={`popup popup-${props.name} ${props.isOpen ? 'popup_is-opened' : ''}`} tabIndex="0">
 				<div className="popup__container">
